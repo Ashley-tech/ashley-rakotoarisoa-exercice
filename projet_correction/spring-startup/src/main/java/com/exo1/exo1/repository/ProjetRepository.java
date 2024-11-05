@@ -10,5 +10,6 @@ import java.util.Optional;
 
 public interface ProjetRepository extends JpaRepository<Projet, Long> {
     @Query("SELECT p FROM Task tache LEFT JOIN FETCH tache.user WHERE tache.id = :id")
-    Optional<Task> findByIdWithUser(@Param("id") Long id);
+    Optional<Projet> findByIdWithUser(@Param("id") Long id);
+    // Page<Projet> findAll(Pageable pageable);
 }
